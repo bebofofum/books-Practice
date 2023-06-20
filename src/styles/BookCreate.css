@@ -1,0 +1,13 @@
+
+
+.input-title-field {
+    display: inline-block;
+    width: 70%;
+    margin: 5px 0 0 10px;
+
+    font-weight: 400;
+    text-align: center;
+    border-radius: 10px;
+    border: solid lightblue;
+    padding: 1em;
+}
