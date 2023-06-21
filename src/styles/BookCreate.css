@@ -66,32 +66,64 @@ h1 {
 }
 
 .glow-effect {
+    --glow-box-offset: 100px;
+    --glow-hard-rule-color: white;
+    --glow-hard-rule-width: 3px;
+    --glow-soft-rule-color: white;
+    --glow-soft-rule-size: 8px;
+    --glow-animation-speed: 2000ms;
     position: relative;
 }
 
 .glow-wrap {
     position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    /* outline: 3px solid black; */
+    pointer-events: none;
+    inset: calc(var(--glow-box-offset) / -2);
+    width: calc(100% + var(--glow-box-offset));
+    height: calc(100% + var(--glow-box-offset));
+    opacity: 0;
+    /* outline: 3px solid blue; */
 }
 
 .glow-soft, .glow-hard {
-    width: 100%;
-    height: 100%;
+    width: calc(100% - var(--glow-box-offset));
+    height: calc(100% - var(--glow-box-offset));
+    x: calc(var(--glow-box-offset) / 2);
+    y: calc(var(--glow-box-offset) / 2);
     fill:transparent;
     stroke: black;
     stroke-width: 5px;
-    stroke-dasharray: 20px 30px;
-    transition: stroke-dashoffset 500ms;
+    /* below values add up to 50px */
+    stroke-dasharray: 20px 30px; 
 }
 
-.glow-effect:hover .glow-soft,
-.glow-effect:hover .glow-hard {
-    stroke-dashoffset: -65px;
+
+.glow-hard {
+    stroke: var(--glow-hard-rule-color);
+    stroke-width: var(--glow-hard-rule-width);
 }
 
 .glow-soft {
-    filter:blur(5px);
+    stroke: var(--glow-soft-rule-color);
+    stroke-width: var(--glow-soft-rule-size);
+
+    filter:blur(var(--glow-soft-rule-size));
 }
+
+.glow-effect:is(:hover, :focus) :is(.glow-hard, .glow-soft){
+    stroke-dashoffset: -80px;
+    transition: stroke-dashoffset var(--glow-animation-speed);
+
+}
+
+.glow-effect:is(:hover, :focus) .glow-wrap {
+    animation: glow-box-visibility 5000ms;
+}
+
+@keyframes glow-box-visibility {
+    0%, 100% {
+        opacity: 0;
+    }
+    25%, 75% {
+        opacity: 1;
+    }}
