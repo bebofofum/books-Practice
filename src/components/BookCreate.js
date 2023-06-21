@@ -10,6 +10,7 @@ const BookCreate = ({ onCreateBook }) => {
         setTitle(e.target.value);
     }
 
+    //Refresher. We setTitle back to an empty string to clear the field after submit
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -18,9 +19,9 @@ const BookCreate = ({ onCreateBook }) => {
 
     }
 
-    return <section>
+    return <section className='book-form-wrapper'>
         <h1>Book Create Form</h1>
-        <form onSubmit={handleSubmit}>
+        <form className='' onSubmit={handleSubmit}>
             <fieldset className='form-field'>
                 <label htmlFor='book_title' className='form-book-title'>Book Title</label>
                 <input 
