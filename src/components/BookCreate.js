@@ -33,7 +33,13 @@ const BookCreate = ({ onCreateBook }) => {
                 className='input-title-field'
                 placeholder='Add Book Title' />
             </fieldset>
-            <button className='form-add-book-btn' >Add Book</button>
+            <button className='form-add-book-btn glow-effect' >
+                Add Book
+                <svg className='glow-wrap'>
+                    <rect pathLength={'100'} className='glow-soft'></rect>
+                    <rect pathLength={'100'} className='glow-hard'></rect>
+                </svg>
+                </button>
 
         </form>
     </section>
