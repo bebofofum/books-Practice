@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import BookCreate from './components/BookCreate';
+import BookList from './components/BookList';
 import './styles/App.css';
 
 
@@ -7,13 +8,24 @@ function App() {
 
     const [ books, setBooks ] = useState([]);
 
+   
+
+
+
     const handleCreateBoook = (title) => {
-        console.log(title)
+        const uniqueID = () => {
+            return Math.round(Math.random() * 9999)
+        }
+        const updatedBooks = [
+            ...books, { id: uniqueID, title}
+        ]
+        setBooks(updatedBooks);
     }
 
     return <div className='App'>
-        <div>Hello</div>
-        <div><BookCreate onCreateBook={handleCreateBoook}/></div>
+        {books.length}
+        <BookList books={books}/>
+        <BookCreate onCreateBook={handleCreateBoook}/>
     </div>
 }
 

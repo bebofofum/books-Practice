@@ -93,7 +93,7 @@ h1 {
     fill:transparent;
     stroke: black;
     stroke-width: 5px;
-    /* below values add up to 50px */
+    /* below values must add up to 50px */
     stroke-dasharray: 20px 30px; 
 }
 

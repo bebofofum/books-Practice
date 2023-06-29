@@ -36,8 +36,8 @@ const BookCreate = ({ onCreateBook }) => {
             <button className='form-add-book-btn glow-effect' >
                 Add Book
                 <svg className='glow-wrap'>
-                    <rect pathLength={'100'} stroke-linecap={'round'} className='glow-soft'></rect>
-                    <rect pathLength={'100'} stroke-linecap={'round'} className='glow-hard'></rect>
+                    <rect pathLength={'100'} strokeLinecap={'round'} className='glow-soft'></rect>
+                    <rect pathLength={'100'} strokeLinecap={'round'} className='glow-hard'></rect>
                 </svg>
                 </button>
 
