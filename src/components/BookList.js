@@ -1,6 +1,6 @@
 import React from 'react';
 import BookShow from './BookShow';
-
+import '../styles/BookList.css';
 
 const BookList = ({ books, onDeleteBook }) => {
     const renderedBooks = books.map(book => {

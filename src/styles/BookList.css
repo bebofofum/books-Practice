@@ -1,0 +1,6 @@
+.book-list-container {
+    display: grid;
+    border: solid 1px red;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}

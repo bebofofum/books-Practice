@@ -1,0 +1,7 @@
+.book-grid-container {
+    border: solid 2px green;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 2.5rem;
+    background: #f2f2f2;
+}
