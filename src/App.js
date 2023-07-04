@@ -8,8 +8,14 @@ function App() {
 
     const [ books, setBooks ] = useState([]);
 
-   
+    const handleDeleteBookById = (id) => {
+        const updatedBooks = books.filter((book) => {
+            return book.id !== id;
+        });
 
+        setBooks(updatedBooks)
+
+    };
 
 
     const handleCreateBoook = (title) => {
@@ -17,14 +23,16 @@ function App() {
             return Math.round(Math.random() * 9999)
         }
         const updatedBooks = [
-            ...books, { id: uniqueID, title}
-        ]
+            ...books, { 
+                id: uniqueID, 
+                title }
+        ];
         setBooks(updatedBooks);
     }
 
     return <div className='App'>
         {books.length}
-        <BookList books={books}/>
+        <BookList books={books} onDeleteBook={handleDeleteBookById} />
         <BookCreate onCreateBook={handleCreateBoook}/>
     </div>
 }
