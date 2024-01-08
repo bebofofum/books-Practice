@@ -1,6 +1,11 @@
 .book-list-container {
-    display: grid;
-    border: solid 1px red;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border: solid 6px firebrick;
     gap: 1.5rem;
+}
+
+.book-list-container > * {
+    flex: 1;
 }

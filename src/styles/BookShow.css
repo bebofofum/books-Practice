@@ -1,7 +1,54 @@
-.book-grid-container {
-    border: solid 2px green;
-    padding: 2rem;
+.book-item-container {
+    border: solid 3px green;
+    max-width: 200px;
+    margin: .9em;
+    padding: .6rem;
     border-radius: 0.5rem;
     box-shadow: 2.5rem;
     background: #f2f2f2;
 }
+
+.book-item {
+    /* border: solid 2px purple; */
+    /* max-width: 90%; */
+    background: lightgreen;
+}
+
+.book-title-show {
+    font-family: Roboto, sans-serif;
+
+}
+
+.icon-container {
+    /* border: solid 2px red; */
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.3em;
+    max-height: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.delete-icon:before {
+    font: var(--fa-font-solid );
+    font-size: 1.2em;
+    color: gray;
+    content: "\f057";
+    display: block;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    
+}
+
+.edit-icon:before {
+    font: var(--fa-font-solid);
+    font-size: 1.2em;
+    color: gray;
+    content: "\f303";
+    display: block;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    
+}
+
+

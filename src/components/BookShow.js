@@ -1,18 +1,39 @@
 import React from 'react';
+import BookEdit from './BookEdit';
+import {useState} from 'react';
 import '../styles/BookShow.css';
 
 
 const BookShow = ({ book, onDeleteBook }) => {
-    const handleClick = () => {
+
+    const [showEdit, setShowEdit] = useState(false);
+
+
+    const handleDeleteClick = () => {
         onDeleteBook(book.id)
     };
 
-    return <div className='book-grid-container'>
-        <h2>Book item</h2>
-        <div className='delete-icon-container'>
-            <button className='delete-icon' onClick={handleClick} >Delete Book</button>
+    const handleEditClick = () => {
+        setShowEdit(!showEdit);
+    }
+
+    let content =  <div className='book-item'>
+            <h2>Book item</h2>
+            <div className='book-title-show'>{book.title}</div>
+        </div>;
+        
+    if (showEdit) {
+        content = <BookEdit />
+    }
+
+    return <div className='book-item-container'>
+        <div className='icon-container'>
+            <p className='edit-icon' onClick={handleEditClick}></p>
+            <p className='delete-icon' onClick={handleDeleteClick} ></p>
         </div>
-        <div className='book-title-show'>{book.title}</div>
+
+        <div>{content}</div>
+        
     </div>
 }
 
