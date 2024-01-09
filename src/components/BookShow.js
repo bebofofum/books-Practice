@@ -21,9 +21,9 @@ const BookShow = ({ book, onDeleteBook }) => {
             <h2>Book item</h2>
             <div className='book-title-show'>{book.title}</div>
         </div>;
-        
+
     if (showEdit) {
-        content = <BookEdit />
+        content = <BookEdit book={book} />
     }
 
     return <div className='book-item-container'>
