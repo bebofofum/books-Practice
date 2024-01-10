@@ -2,9 +2,10 @@ import React from 'react';
 import BookShow from './BookShow';
 import '../styles/BookList.css';
 
-const BookList = ({ books, onDeleteBook }) => {
+const BookList = ({ books, onDeleteBook, onEditBook }) => {
     const renderedBooks = books.map(book => {
-        return <BookShow key={book.id} book={book} onDeleteBook={onDeleteBook} />
+        console.log('what is title', book.title)
+        return <BookShow key={book.id} book={book} onDeleteBook={onDeleteBook} onEditBook={onEditBook} />
     })
 
     return <div className='book-list-container'>{renderedBooks}</div>;

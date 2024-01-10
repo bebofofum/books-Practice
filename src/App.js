@@ -17,14 +17,31 @@ function App() {
 
     };
 
+    const handleEditBookById = (id, updatedTitle) => {
+        const updatedBooks = books.map((book) => {
+            if (book.id === id) {
+                return {
+                    ...book, 
+                    title: updatedTitle
+                };
+            }
+
+            return book;
+
+        });
+
+        setBooks(updatedBooks)
+
+    };
+
 
     const handleCreateBoook = (title) => {
-        const uniqueID = () => {
-            return Math.round(Math.random() * 9999)
-        }
+        // const uniqueID = () => {
+        //     return Math.round(Math.random() * 9999)
+        // }
         const updatedBooks = [
             ...books, { 
-                id: uniqueID, 
+                id: Math.round(Math.random() * 9999), 
                 title }
         ];
         setBooks(updatedBooks);
@@ -32,7 +49,7 @@ function App() {
 
     return <div className='App'>
         {books.length}
-        <BookList books={books} onDeleteBook={handleDeleteBookById} />
+        <BookList books={books} onDeleteBook={handleDeleteBookById} onEditBook={handleEditBookById} />
         <BookCreate onCreateBook={handleCreateBoook}/>
     </div>
 }
