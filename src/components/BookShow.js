@@ -16,7 +16,9 @@ const BookShow = ({ book, onDeleteBook, onEditBook }) => {
     const handleEditClick = () => {
         setShowEdit(!showEdit);
     }
-
+    //We're doing this because we want one callback to handle 2 similar functions so this submit 
+    //will also encapsulate our Edit book callback and pass the new details to app component
+    //rather than having a separate edit book prop also passing to book edit component
     const handleSubmit = (id, newTitle) => {
 
         console.log('new title is', newTitle)
@@ -27,7 +29,6 @@ const BookShow = ({ book, onDeleteBook, onEditBook }) => {
     }
 
     let content =  <div className='book-item'>
-            <h2>Book item</h2>
             <div className='book-title-show'>{book.title}</div>
         </div>;
 

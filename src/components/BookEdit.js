@@ -1,5 +1,6 @@
 import React from 'react';
 import {useState} from 'react';
+import '../styles/BookEdit.css';
 
 const BookEdit = ({book, onEditSubmit}) => {
 
@@ -18,14 +19,18 @@ const BookEdit = ({book, onEditSubmit}) => {
     }
 
 
-    return <form onSubmit={handleSubmit} className='book-edit'>
-        <label>Title</label>
-        <input 
-        className='input' 
-        value={title}
-        onChange={handleOnChange}
-        placeholder='Edit Title' />
-        <button className='save-button'>Save</button>
+    return <form onSubmit={handleSubmit} className=''>
+        <fieldset className='form-field-edit'>
+            <label htmlFor='book_title' className='form-book-title'>Book Title</label>
+            <input 
+            className='input' 
+            value={title}
+            onChange={handleOnChange}
+            name='title'
+            id='title'
+            placeholder='Edit Title' />
+        </fieldset>
+        <button className='form-save-button'>Save</button>
 
     </form>
 }
