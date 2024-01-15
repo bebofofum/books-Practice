@@ -41,3 +41,14 @@
     border-radius: 1em;
 
 }
+
+.book-edit-input {
+    margin: 1em 0 1em;
+    width: 100%;
+    font-weight: 400;
+    text-align: center;
+    border-radius: 10px;
+    border: solid lightblue;
+    padding: .7em 0 .7em;
+
+}

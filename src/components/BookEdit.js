@@ -23,7 +23,7 @@ const BookEdit = ({book, onEditSubmit}) => {
         <fieldset className='form-field-edit'>
             <label htmlFor='book_title' className='form-book-title'>Book Title</label>
             <input 
-            className='input' 
+            className='book-edit-input' 
             value={title}
             onChange={handleOnChange}
             name='title'
