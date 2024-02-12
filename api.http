@@ -1,0 +1,29 @@
+#GET all books REST request
+GET http://localhost:3001/books HTTP/1.1
+Content-Type: application/json
+
+###
+
+#CREATE a book REST request
+POST http://localhost:3001/books HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Harry Potter"
+}
+
+###
+
+#EDIT a book REST Request
+PUT http://localhost:3001/books/1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Hogfather"
+}
+
+###
+
+#DELETE a book REST Request
+DELETE http://localhost:3001/books/1 HTTP/1.1
+Content-Type: application/json

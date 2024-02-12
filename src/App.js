@@ -48,7 +48,7 @@ function App() {
     }
 
     return <div className='App'>
-        {books.length}
+        <h1>Reading List</h1>
         <BookList books={books} onDeleteBook={handleDeleteBookById} onEditBook={handleEditBookById} />
         <BookCreate onCreateBook={handleCreateBoook}/>
     </div>

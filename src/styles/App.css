@@ -5,6 +5,12 @@
 .App {
     margin: 0 auto;
     background: rgb(30,58,129);
+    border: solid;
     background: linear-gradient(0deg, rgba(30,58,129,1) 28%, rgba(15,106,210,1) 95%);
 }
 
+.App h1 {
+    padding: 1em;
+    font-size: 3em;
+
+}

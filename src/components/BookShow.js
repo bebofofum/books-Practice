@@ -43,6 +43,10 @@ const BookShow = ({ book, onDeleteBook, onEditBook }) => {
             <p className='edit-icon' onClick={handleEditClick}></p>
             <p className='delete-icon' onClick={handleDeleteClick} ></p>
         </div>
+        <img 
+            alt="books"
+            src={`https://picsum.photos/seed/${book.id}/200`}
+            />
 
         <div>{content}</div>
         
