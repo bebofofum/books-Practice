@@ -1,3 +1,12 @@
 {
-  "books": []
+  "books": [
+    {
+      "title": "Dead City",
+      "id": 1
+    },
+    {
+      "title": "Mort",
+      "id": 2
+    }
+  ]
 }
