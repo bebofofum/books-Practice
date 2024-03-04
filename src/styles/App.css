@@ -10,7 +10,8 @@
 }
 
 .App h1 {
-    padding: 1em;
+    padding: 1em 1em 0 1em;
     font-size: 3em;
+    line-height: .9em;
 
 }

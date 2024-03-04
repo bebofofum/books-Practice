@@ -4,7 +4,7 @@ import '../styles/BookList.css';
 
 const BookList = ({ books, onDeleteBook, onEditBook }) => {
     const renderedBooks = books.map(book => {
-        console.log('what is title', book.title)
+        // console.log('what is title', book.title)
         return <BookShow key={book.id} book={book} onDeleteBook={onDeleteBook} onEditBook={onEditBook} />
     })
 
