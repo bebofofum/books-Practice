@@ -19,7 +19,11 @@ function App() {
         handleFetchBooks()
     }, []);
 
-    const handleDeleteBookById = (id) => {
+    const handleDeleteBookById = async (id) => {
+       await axios.delete(`http://localhost:3001/books/${id}`)
+
+
+
         const updatedBooks = books.filter((book) => {
             return book.id !== id;
         });
@@ -28,12 +32,16 @@ function App() {
 
     };
 
-    const handleEditBookById = (id, updatedTitle) => {
+    const handleEditBookById = async (id, updatedTitle) => {
+        const response = await axios.put(`http://localhost:3001/books/${id}`, {
+            title: updatedTitle
+        });
+
         const updatedBooks = books.map((book) => {
             if (book.id === id) {
                 return {
                     ...book, 
-                    title: updatedTitle
+                    ...response.data
                 };
             }
 
